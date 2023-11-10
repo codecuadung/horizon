@@ -22,7 +22,7 @@ public class ThanhVienAdapter extends ArrayAdapter<ThanhVien> {
     private Context context;
     ThanhVienFragment fragment;
     private ArrayList<ThanhVien> lists;
-    TextView tvMatv,tvTenTV,tvNamSinh;
+    TextView tvMatv, tvTenTV, tvNamSinh;
     ImageView imgDel;
 
     public ThanhVienAdapter(@NonNull Context context, ThanhVienFragment fragment, ArrayList<ThanhVien> lists) {
@@ -36,19 +36,19 @@ public class ThanhVienAdapter extends ArrayAdapter<ThanhVien> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = convertView;
-        if(view==null){
-            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.thanh_vien_item,null);
+        if (view == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.thanh_vien_item, null);
         }
 
         final ThanhVien item = lists.get(position);
-        if(item!=null){
+        if (item != null) {
             tvMatv = view.findViewById(R.id.tvMaTV);
-            tvMatv.setText("Mã thành viên: "+item.getMaTV());
+            tvMatv.setText("Mã thành viên: " + item.getMaTV());
             tvTenTV = view.findViewById(R.id.tvTenTV);
-            tvTenTV.setText("Tên thành viên: "+item.getHoTen());
+            tvTenTV.setText("Tên thành viên: " + item.getHoTen());
             tvNamSinh = view.findViewById(R.id.NamSinh);
-            tvNamSinh.setText("Năm sinh: "+item.getNamSinh());
+            tvNamSinh.setText("Năm sinh: " + item.getNamSinh());
             imgDel = view.findViewById(R.id.imgDeleteLS);
         }
         imgDel.setOnClickListener(new View.OnClickListener() {

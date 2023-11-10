@@ -70,13 +70,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnSaveUserChange"
             android:text="Lưu"
+            android:layout_weight="1"
             android:textSize="20dp"
             android:drawableStart="@drawable/baseline_save_24" />
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnCancelUserChange"
-            android:text="Lưu"
+            android:text="Hủy"
+            android:layout_weight="1"
             android:textSize="20dp"
             android:drawableStart="@drawable/baseline_cancel_24" />
 

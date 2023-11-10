@@ -55,4 +55,5 @@ public class LoaiSachDAO {
         List<LoaiSach>list = getData(sql,id);
         return list.get(0);
     }
+
 }

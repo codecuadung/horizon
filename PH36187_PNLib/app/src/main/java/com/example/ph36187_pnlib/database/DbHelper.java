@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "PNLib";
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 7;
 
     static final String CREATE_TABLE_THU_THU = "" +
             "CREATE TABLE ThuThu(\n" +

@@ -16,8 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ph36187_pnlib.Fragment.ChangePassFragment;
+import com.example.ph36187_pnlib.Fragment.DoanhThuFragment;
 import com.example.ph36187_pnlib.Fragment.LoaiSachFragment;
+import com.example.ph36187_pnlib.Fragment.PhieuMuonFragment;
+import com.example.ph36187_pnlib.Fragment.SachFragment;
 import com.example.ph36187_pnlib.Fragment.ThanhVienFragment;
+import com.example.ph36187_pnlib.Fragment.TopFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         ab.setHomeAsUpIndicator(R.drawable.baseline_menu_24);
         ab.setDisplayHomeAsUpEnabled(true);
         NavigationView nv = findViewById(R.id.nvView);
+        FragmentManager manager = getSupportFragmentManager();
+        setTitle("Quản lý phiếu mượn");
+        //  Toast.makeText(getApplicationContext(), "Quản lý phiếu mượn", Toast.LENGTH_SHORT).show();
+        PhieuMuonFragment PhieuMuonFragment = new PhieuMuonFragment();
+        manager.beginTransaction()
+                .replace(R.id.flContent,PhieuMuonFragment)
+                .commit();
         //show user in header
         mHeaderView = nv.getHeaderView(0);
         edUser = mHeaderView.findViewById(R.id.txtUser);
@@ -50,7 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager manager = getSupportFragmentManager();
                 if (item.getItemId() == R.id.nav_PhieuMuon) {
                     setTitle("Quản lý phiếu mượn");
-                    Toast.makeText(getApplicationContext(), "Quản lý phiếu mượn", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getApplicationContext(), "Quản lý phiếu mượn", Toast.LENGTH_SHORT).show();
+                    PhieuMuonFragment PhieuMuonFragment = new PhieuMuonFragment();
+                    manager.beginTransaction()
+                            .replace(R.id.flContent,PhieuMuonFragment)
+                            .commit();  // Hiển thị Fragment Phiếu Mượn mặc định khi mở ứng dụng
                 } else if (item.getItemId() == R.id.nav_LoaiSach) {
                     setTitle("Quản lý loại sách");
                     Toast.makeText(getApplicationContext(), "Quản lý loại sách", Toast.LENGTH_SHORT).show();
@@ -61,18 +76,30 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_Sach) {
                     setTitle("Quản lý sách");
                     Toast.makeText(getApplicationContext(), "Quản lý sách", Toast.LENGTH_SHORT).show();
-
+                    SachFragment sachFragment = new SachFragment();
+                    manager.beginTransaction()
+                            .replace(R.id.flContent,sachFragment)
+                            .commit();
                 } else if (item.getItemId() == R.id.sub_Top) {
                     setTitle("Top 10 sách mượn nhiều nhất");
                     Toast.makeText(getApplicationContext(), "Top 10 sách mượn nhiều nhất", Toast.LENGTH_SHORT).show();
+                    TopFragment topFragment = new TopFragment();
+                    manager.beginTransaction()
+                            .replace(R.id.flContent,topFragment)
+                            .commit();
 
                 } else if (item.getItemId() == R.id.sub_Doanhthu) {
                     setTitle("Thống kê doanh thu");
                     Toast.makeText(getApplicationContext(), "Thống kê doanh thu", Toast.LENGTH_SHORT).show();
+                    DoanhThuFragment doanhThuFragment = new DoanhThuFragment();
+                    manager.beginTransaction()
+                            .replace(R.id.flContent,doanhThuFragment)
+                            .commit();
 
                 } else if (item.getItemId() == R.id.sub_AddUser) {
                     setTitle("Thêm người dùng");
-                    Toast.makeText(getApplicationContext(),"Thêm người dùng",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(),"Thêm người dùng",Toast.LENGTH_SHORT).show();
+
 
                 } else if (item.getItemId() == R.id.sub_Pass) {
                     setTitle("Đổi mật khẩu");

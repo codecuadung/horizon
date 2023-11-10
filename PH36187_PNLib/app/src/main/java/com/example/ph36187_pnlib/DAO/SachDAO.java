@@ -37,7 +37,7 @@ public class SachDAO {
     }
     @SuppressLint("Range")
     public List<Sach> getData(String sql, String...selectionArgs){
-        List<Sach>list = new ArrayList<>();
+        List<Sach>list = new ArrayList<Sach>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
             Sach obj = new Sach();
