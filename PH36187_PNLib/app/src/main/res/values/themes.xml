@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PH36187_PNLib" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Đặt màu cho thanh công cụ -->
+        <item name="colorPrimary">#03A9F4</item> <!-- Đặt màu xanh (ví dụ: #00FF00) -->
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Các thuộc tính style -->
+    </style>
+</resources>

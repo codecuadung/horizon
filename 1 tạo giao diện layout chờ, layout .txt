@@ -1,0 +1,68 @@
+1: tạo giao diện: layout chờ, layout listview, item lisview, item update, layout add
+2: dùng  handler cho layout chờ
+3: tạo model(implement seratable), tạo adapter( kế thừa Base, khởi tạo Context và Arraylist<model>)
+return convertview;
+khởi tạo LayoutInflater = ((Activity)context).LayoutInflater();
+truyền item_listview vào 
+sau đó ánh xạ các thành phần trong item_listview
+sau khi ánh xạ thì settext bằng cách lấy mảng .get(position).get(1 giá trị trong model)
+*(double và int phải ép kiểu String.valoeOf.
+tạo thêm phương thức xóa  bằng remove(position)
+4:vào main ánh xạ arraylist<model> gán dữ liệu cho arraylist
+load data : khởi tạo adapter = new adapter(this,mảng)
+listview.setadapter
+5: delete: list.remove(position)
+notyfi...
+6:update:  tạo 1 item update
+sau đó code bên ngoài convertview, tạo 1 phương thức mới (phương thức update 1 đối tượng nên truyền model và tên)
+dùng alerdialog.buidler và khởi tạo = new alerdialog.buidler(context);
+dùng layoutflater để set item update lên màn hình(lưu ý: cần có view giống convertview)
+buidler.setview(view);
+Dialog dialog = buidler.create();
+dialog.show();
+ánh xạ
+gán dữ liệu lên các textview
+setonclick cho update
+dùng tên để gán giá trị setttext(nhớ ép kiểu nếu là int hoặc double)
+dialog.dismiss();
+notify...
+phương thức add:
+a:
+- tạo  ActivityResultLauncher<Intent> = registerForActivityResult(new ActivityResultContract.StartActivityforResult)(), new ....
+if(result.getResultCode()==1{
+Intent intent = result.getData();
+Bundle bundle = inten.getExtras();
+model svmoi = (model) bundle.getSerializable("svmoi")
+list.add(svmoi);
+loadData();
+onclick add
+new intent
+dùng phương thức trên và truyền intent vào
+b:
+- tạo layout thêm sv
+ánh xạ 
+lấy text bằng gettext
+thêm điều kiện
+bắt buộc nhập đầy đủ thông tin( kiểu String)
+dùng try{
+ép kiểu Double và int bằng valueof hoặc parse
+kiểm tra <=0
+nếu lớn hơn 0 ==>điều kiện đúng
+}
+
+ catch(numberformatException e)
+
+
+điều kiện đúng :
+model svmoi = new model(...)
+tạo intents và builde
+buidle.putSerializable("svmoi",svmoi);
+intent.putExtras(buidle);
+setResult(1,intent);
+finish();
+
+
+
+
+
+//Tóm tắt 
